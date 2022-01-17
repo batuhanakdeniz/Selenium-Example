@@ -1,0 +1,164 @@
+Feature: Login Scenarios
+  Scenario: Kullanıcı Girişi E-posta adresi ile başarıyla tamamlanır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, E-posta adresi alanına "Eposta_adresi" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Hoş geldiniz başlığı görüntülenir
+    And "Eposta_adresi" alanı görüntülenir
+    And Kullanıcı, Şifre alanına "Geçerli_Şifre" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi geçersiz E-posta adresi ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, E-posta adresi alanına "Geçersiz_Eposta_adresi" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    Then E-posta adresi eksik veya hatalı. uyarısı görüntülenir
+
+  Scenario: Kullanıcı Girişi geçersiz şifre ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, E-posta adresi alanına "Geçerli_Eposta_adresi" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Kullanıcı, Şifre alanına "Geçersiz_Şifre" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    Then Girdiğiniz şifre eksik veya hatalı. uyarısı görüntülenir
+
+  Scenario: Kullanıcı Girişi Şifremi unuttum butonuna tıklar ve yeni şifre ile giriş yapar
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, E-posta adresi alanına "Geçerli_Eposta_adresi" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Kullanıcı, Şifremi unuttum butonuna tıklar
+    And Son bir adım kaldı uyarısı görüntülenir
+    And Kullanıcı, Mail hesabı üzerinden yeni şifre oluşturmayı onaylar
+    And Yeni şifre oluşturulur
+    And Kullanıcı Girişi E-posta adresi ile başarıyla tamamlanır
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Telefon Numarası ile başarıyla tamamlanır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Telefon numarası alanına "Telefon_Numarası" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Son birkaç adım kaldı başlığı görüntülenir
+    And Doğrulama kodu alanı görüntülenir
+    And Kullanıcı, Doğrulama Kodu alanına telefon numarasına gelen "Geçerli_Doğrulama_Kodu" girer
+    And Kullanıcı, Onayla butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Telefon Numarası ile giriş yapar geçersiz Doğrulama Kodu girer
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Telefon numarası alanına "Telefon_Numarası" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Son birkaç adım kaldı başlığı görüntülenir
+    And Doğrulama kodu alanı görüntülenir
+    And Kullanıcı, Doğrulama Kodu alanına telefon numarasına gelen "Geçersiz_Doğrulama_Kodu" girer
+    Then Yanlış Doğrulama Kodu uyarısı görüntülenir
+
+  Scenario: Kullanıcı Girişi Telefon Numarası ile giriş yapar Doğrulama Kodu süresi biter
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Telefon numarası alanına "Telefon_Numarası" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Son birkaç adım kaldı başlığı görüntülenir
+    And Doğrulama kodu alanı görüntülenir
+    Then Süreniz doldu uyarısı görüntülenir
+
+
+  Scenario: Kullanıcı Girişi Telefon Numarası ile giriş yapar Doğrulama Kodu süresi biter ve yeni kod ile Başarılı giriş yapar
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Telefon numarası alanına "Telefon_Numarası" girer
+    And Kullanıcı, Giriş Yap butonuna tıklar
+    And Son birkaç adım kaldı başlığı görüntülenir
+    And Doğrulama kodu alanı görüntülenir
+    And Kullanıcı, Doğrulama süresi bitene kadar kod girmez
+    And Süreniz doldu uyarısı görüntülenir
+    And Tekrar Gönder butonuna tıklanır
+    And Kullanıcı, Doğrulama Kodu alanına telefon numarasına gelen "Geçerli_Doğrulama_Kodu" girer
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Browserda Açık Facebook hesabı ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Facebook ile Giriş Yap butonuna tıklar
+    And Kullanıcı, Facebook hesabı ile Devam et butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Browserda Kapalı Facebook hesabı ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Facebook ile Giriş Yap butonuna tıklar
+    And Kullanıcı, Facebook hesabına giriş yapar
+    And Kullanıcı,Facebook hesabı ile Devam et butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Browserda Açık Google hesabı ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Google ile Giriş Yap butonuna tıklar
+    And Kullanıcı, Google hesabına giriş yapar
+    And Kullanıcı,Google hesabı ile Devam et butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Browserda Kapalı Google hesabı ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Google ile Giriş Yap butonuna tıklar
+    And Kullanıcı, Google hesabına giriş yapar
+    And Kullanıcı,Google hesabı ile Devam et butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Browserda Açık Apple hesabı ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Apple ile Giriş Yap butonuna tıklar
+    And Kullanıcı, Apple hesabına giriş yapar
+    And Kullanıcı,Apple hesabı ile Devam et butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir
+
+  Scenario: Kullanıcı Girişi Browserda Kapalı Apple hesabı ile yapılır
+    Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.
+    And Kullanıcı, Giriş Yap alanının üzerine mouse ile gelir
+    And Kullanıcı, Giriş Yap Alt menü alanından Giriş Yap butonuna tıklar
+    When Kullanıcı, Apple ile Giriş Yap butonuna tıklar
+    And Kullanıcı, Apple hesabına giriş yapar
+    And Kullanıcı,Apple hesabı ile Devam et butonuna tıklar
+    Then Anasayfada Hesabım alanı görüntülenir
+    And Anasayfada Kullanıcın "İsim Soyisim" alanı görüntülenir
+    And Kullanıcı, Hesabım alanının üzerine mouse ile gelir ve alt menüden Kullanıcı Bilgilerim alanı görüntülenir

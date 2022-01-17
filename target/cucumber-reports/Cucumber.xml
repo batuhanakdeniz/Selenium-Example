@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="44.851">
+<testcase classname="Unknown" name="_2" time="27.605">
+<system-out><![CDATA[Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.......................passed
+And Kullanıcı giriş işlemi yapılır........................................passed
+And Yönlendirmeden sonra anasayfada kullanıcı giriş işleminin yapıldığı doğrulanır.passed
+When Kullanıcı, burada satın almak istediği ürün için arama yapacaktır..passed
+And Kullanıcı, Arama sonucunda ekrana gelen ürün listesinden ürün seçer..passed
+And Seçilen ürün için 2 tane farklı satıcıdan ürün seçilip sepete eklenir..passed
+Then Seçilen ürünün doğru olarak eklendiği ‘Sepetim’ sayfasında doğrulanmalıdır..passed
+]]></system-out>
+</testcase>
+<testcase classname="Unknown" name="_2" time="17.057">
+<system-out><![CDATA[Given Kullanıcı Hepsiburada.com sitesini ziyaret eder.......................passed
+When Kullanıcı, burada satın almak istediği ürün için arama yapacaktır..passed
+And Kullanıcı, Arama sonucunda ekrana gelen ürün listesinden ürün seçer..passed
+And Seçilen ürün için 2 tane farklı satıcıdan ürün seçilip sepete eklenir..passed
+Then Seçilen ürünün doğru olarak eklendiği ‘Sepetim’ sayfasında doğrulanmalıdır..passed
+]]></system-out>
+</testcase>
+</testsuite>

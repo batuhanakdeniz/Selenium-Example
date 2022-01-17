@@ -1,0 +1,234 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-01-17T14:02:50.683Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2631000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.LoginSteps.initialize()"
+            }
+          }
+        ],
+        "line": 2,
+        "name": "",
+        "description": "",
+        "id": ";",
+        "after": [
+          {
+            "result": {
+              "duration": 343000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.LoginSteps.driverQuit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4077000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Kullanıcı Hepsiburada.com sitesini ziyaret eder.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userVisitHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3368000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Kullanıcı giriş işlemi yapılır.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userEntersUserNamePassword()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4488000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Yönlendirmeden sonra anasayfada kullanıcı giriş işleminin yapıldığı doğrulanır",
+            "match": {
+              "location": "StepDefinition.LoginSteps.checkLogin()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 307000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Kullanıcı, burada satın almak istediği ürün için arama yapacaktır.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userSearchProduct()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3560000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Kullanıcı, Arama sonucunda ekrana gelen ürün listesinden ürün seçer.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userSelectProductFromSearchedProductList()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7872000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "Seçilen ürün için 2 tane farklı satıcıdan ürün seçilip sepete eklenir.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userSelectTwoDifferentSupplier()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 875000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Seçilen ürünün doğru olarak eklendiği ‘Sepetim’ sayfasında doğrulanmalıdır.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.checkSelectedProductsInCart()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/AddToCartWithLogin.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-01-17T14:03:18.299Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2027000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.LoginSteps.initialize()"
+            }
+          }
+        ],
+        "line": 2,
+        "name": "",
+        "description": "",
+        "id": ";",
+        "after": [
+          {
+            "result": {
+              "duration": 353000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.LoginSteps.driverQuit()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3306000000,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "Kullanıcı Hepsiburada.com sitesini ziyaret eder.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userVisitHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1103000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Kullanıcı, burada satın almak istediği ürün için arama yapacaktır.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userSearchProduct()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2891000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Kullanıcı, Arama sonucunda ekrana gelen ürün listesinden ürün seçer.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userSelectProductFromSearchedProductList()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6447000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Seçilen ürün için 2 tane farklı satıcıdan ürün seçilip sepete eklenir.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.userSelectTwoDifferentSupplier()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 923000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Seçilen ürünün doğru olarak eklendiği ‘Sepetim’ sayfasında doğrulanmalıdır.",
+            "match": {
+              "location": "StepDefinition.LoginSteps.checkSelectedProductsInCart()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "",
+    "description": "",
+    "id": "",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/Features/AddToCartWithoutLogin.feature",
+    "tags": []
+  }
+]
